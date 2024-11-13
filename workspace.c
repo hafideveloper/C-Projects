@@ -1,18 +1,27 @@
-// Assigning values to variables
+// Basic arithmetic operations
 
 #include <stdio.h>
 
 int main(){
-    int x = 5, y = 6, z = 50; // assign values to different variables on the same line
-    printf("%d", x + y + z);
-    /*prints the sum of the current values of variables x, y and z
-    "%d" is used to print an integer value*/
-    printf("\n...\n"); // Skip to a new line with ‘\n’ and then print ‘...’ and then skip to the next line
+    int number1, number2;
+    int sum, difference, product, mode;
+    float quotient;
 
-    x = y = z = 50;
-    /* in this line, the value of the variables becomes 50 in a sequential manner. first the value of 50 is equalised to z. the value of the variable z is assigned to y... 
-    (assignment is made from right to left)*/
-    printf("%d", x + y + z);
+    printf("Please enter two numbers: ");
+    scanf("%d%d", &number1, &number2); // Take two numbers and write them to number1 and number2 (& -> pointer arithmetic)
+
+    // perform arithmetic operations
+    sum = number1 + number2;
+    difference = number1 - number2;
+    product = number1 * number2;
+    quotient = (float)number1 / number2; // type casting
+    mode = number1 % number2;
+
+    printf("Sum = %d\n", sum);
+    printf("Difference = %d\n", difference);
+    printf("Product = %d\n", product); // print integer variable
+    printf("Quotient = %f\n", quotient); // print decimal numbers (only f -> prints 6 digits after the dot)
+    printf("Mode = %d", mode);
 
     return 0;
 }
