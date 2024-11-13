@@ -1,27 +1,22 @@
-// Basic arithmetic operations
+// Quick value assignment to variables
 
 #include <stdio.h>
 
 int main(){
-    int number1, number2;
-    int sum, difference, product, mode;
-    float quotient;
+    int i = 3;
+    printf("%d\n",i);
 
-    printf("Please enter two numbers: ");
-    scanf("%d%d", &number1, &number2); // Take two numbers and write them to number1 and number2 (& -> pointer arithmetic)
+    i += 5; // i = i+ 5
+    printf("%d\n",i);
 
-    // perform arithmetic operations
-    sum = number1 + number2;
-    difference = number1 - number2;
-    product = number1 * number2;
-    quotient = (float)number1 / number2; // type casting
-    mode = number1 % number2;
+    i -= 5;
+    printf("%d\n",i);
 
-    printf("Sum = %d\n", sum);
-    printf("Difference = %d\n", difference);
-    printf("Product = %d\n", product); // print integer variable
-    printf("Quotient = %f\n", quotient); // print decimal numbers (only f -> prints 6 digits after the dot)
-    printf("Mode = %d", mode);
+    i *= 3;
+    printf("%d\n",i);
+
+    i /= 3;
+    printf("%d\n",i);
 
     return 0;
 }
