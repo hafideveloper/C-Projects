@@ -1,17 +1,23 @@
-// square root calculation
+// Simple interest calculation
 
 #include <stdio.h>
-#include <math.h> // To use the sqrt() function
 
 int main(){
 
-    double number, squareRoot;
+    float principal, time, interestRate, interestAmount;
 
-    printf("Enter the number to calculate the square root: ");
-    scanf("%lf", &number);
+    printf("Enter principal amount: ");
+    scanf("%f", &principal);
 
-    squareRoot = sqrt(number);
-    printf("%.2lf square root of the number = %.2lf", number, squareRoot);
+    printf("Enter time: ");
+    scanf("%f", &time);
+
+    printf("Enter interest rate: ");
+    scanf("%f", &interestRate);
+
+    interestAmount = (principal * time * interestRate) / 100;
+
+    printf("The amount of interest calculated by simple interest calculation = %f", interestAmount);
 
     return 0;
 }
