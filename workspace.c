@@ -1,27 +1,16 @@
-// conversion operations between variable types (typecasting)
+// assigning values to a variable in different number systems
 
 #include <stdio.h>
 
 int main(){
 
-     int number1 = 17, number2 = 5;
+    int a = 35;
+    int b = 0b00100011;
+    int c = 0x23;
 
-     int integerDivisionResult;
-     float floatDivisionResult;
-     double doubleDivisionResult;
-     int intResultFromFloatDivision;
+    printf("a = %d\n", a); // In the number order of 10 (decimal)
+    printf("b = %d\n", b); // In the number order of 2 (binary)
+    printf("c = %d\n", c); // In the number order of 16 (hexadecimal)
 
-     integerDivisionResult = number1 / number2;
-     printf("Integer Division Result = %d\n", integerDivisionResult);
-
-     floatDivisionResult = (float) number1 / number2;
-     printf("Float Division Result = %.20f\n", floatDivisionResult); //In decimal format, 20 digits after the comma 
-
-     doubleDivisionResult = (double) number1 / number2;
-     printf("Double Division Result = %.20f\n", doubleDivisionResult); 
-
-     intResultFromFloatDivision = (int) floatDivisionResult;
-     printf("Integerised version of the actual division result of float type = %d\n", intResultFromFloatDivision);
-    
     return 0;
 }
