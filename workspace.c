@@ -1,20 +1,17 @@
-// power/exponent calculations
+// square root calculation
 
 #include <stdio.h>
-#include <math.h> // To use the pow() function
+#include <math.h> // To use the sqrt() function
 
 int main(){
 
-    double base, exponent, result;
+    double number, squareRoot;
 
-    printf("Enter the base value: ");
-    scanf("%lf", &base); //%lf -> used for decimal (double) numbers
-    printf("Enter the exponent value: ");
-    scanf("%lf", &exponent);
+    printf("Enter the number to calculate the square root: ");
+    scanf("%lf", &number);
 
-    result = pow(base, exponent); //calculate the base^force value
-
-    printf("%.2lf ^ %.2lf = %.2lf", base, exponent, result);
+    squareRoot = sqrt(number);
+    printf("%.2lf square root of the number = %.2lf", number, squareRoot);
 
     return 0;
 }
