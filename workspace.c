@@ -1,16 +1,22 @@
-// Using getchar() and putchar() for character input and output
+// Calculation of rectangle area and perimeter
 
 #include <stdio.h>
-#include <math.h>
 
 int main(){
 
-    char student_grade;
-    printf("Enter student grade: ");
+    float height, width, perimeter, area;
 
-    student_grade = getchar(); // get the grade with getchar() and store it in the student_grade variable (takes only one character)
+    printf("Enter the length of the rectangle: ");
+    scanf("%f", &height);
 
-    putchar(student_grade); // output the grade with putchar()
+    printf("Enter the width of the rectangle: ");
+    scanf("%f", &width);
+
+    perimeter = 2 * (height + width);
+    printf("Rectangle perimeter = %f\n ", perimeter);
+
+    area = height * width;
+    printf("Rectangle area = %f", area);
 
     return 0;
 }
