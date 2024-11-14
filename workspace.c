@@ -1,28 +1,16 @@
-// Simple and compound interest calculation
+// Using getchar() and putchar() for character input and output
 
 #include <stdio.h>
 #include <math.h>
 
 int main(){
 
-    float principal, time, interest_rate, simple_interest_amount, compound_interest_amount;
+    char student_grade;
+    printf("Enter student grade: ");
 
-    printf("Enter principal amount: ");
-    scanf("%f", &principal);
+    student_grade = getchar(); // get the grade with getchar() and store it in the student_grade variable (takes only one character)
 
-    printf("Enter time: ");
-    scanf("%f", &time);
-
-    printf("Enter interest rate: ");
-    scanf("%f", &interest_rate);
-
-    simple_interest_amount = (principal * time * interest_rate) / 100; //simple interest calculation 
-
-    printf("Interest calculated by simple interest calculation = %f", simple_interest_amount );
-
-    compound_interest_amount = principal * (pow((1 + interest_rate / 100), time)); // compound interest calculation
-
-    printf("Interest calculated by compound interest calculation = %f", compound_interest_amount);
+    putchar(student_grade); // output the grade with putchar()
 
     return 0;
 }
