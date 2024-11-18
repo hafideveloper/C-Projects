@@ -1,25 +1,30 @@
-// difference between strlen and sizeof
+// string concatenation, copying, and comparison.
 
 #include <stdio.h>
+#include <string.h>
 
 int main(){
 
-    char english_alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    printf("%d", strlen(english_alphabet));
-    printf("\n...\n");
-    printf("%d", sizeof(english_alphabet)); //sizeof includes the string terminator
-    printf("\n............\n");
+    char greeting_message[20] = "Hello ";
+    char additional_text[] = "World!";
+    char copied_message[20];
 
-    char turkish_alphabet[] = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ"; //Special characters in Turkish (e.g. Ç, Ğ, İ, Ö, Ş, Ü) usually occupy 2 bytes in UTF-8 encoding
-    printf("%d", strlen(turkish_alphabet));
+    // Concatenating strings
+    strcat(greeting_message, additional_text); // it appends "World!" to the end of "Hello " (end-to-end addition)
+    printf("%s", greeting_message);
     printf("\n...\n");
-    printf("%d", sizeof(turkish_alphabet));
-    printf("\n............\n");
 
-    char trial[50] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    printf("%d", strlen(trial));
+    // Copying string
+    strcpy(copied_message, greeting_message); // it copies greeting_message into copied_message
+    printf("%s", copied_message);
     printf("\n...\n");
-    printf("%d", sizeof(trial)); //Measures the total memory allocated when the array is defined
- 
+
+    // Comparing strings
+    printf("%d\n", strcmp(greeting_message, copied_message)); // the strcmp function compares three strings. It returns 0 if they are equal, or a positive/negative value if they are different
+    printf("\n...\n");
+    printf("%d\n", strcmp(greeting_message, additional_text));
+    printf("\n...\n");
+    printf("%d\n", strcmp(additional_text, greeting_message));
+
     return 0;
 }
