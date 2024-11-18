@@ -4,11 +4,12 @@
 
 int main(){
 
-    char character = 'c'; //single character 
-    printf("%c\n", character);
+    char  welcome_message1[]= "Hello!"; // contains null character (\0) 
+    char  welcome_message2[]= {'H', 'e', 'l', 'l', 'o', '!', '\0'}; // (\0 -> string terminator)
 
-    char welcome_message[] = "Hello World!";  //character series (multiple characters)
-    printf("%s", welcome_message);
+    printf("%lu\n", sizeof(welcome_message1));
+    printf("\n...\n");
+    printf("%lu\n", sizeof(welcome_message2));
 
     return 0;
 }
