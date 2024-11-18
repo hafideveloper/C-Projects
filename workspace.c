@@ -1,22 +1,14 @@
-// Calculation of diameter and circumference of the circle
+// operations with strings 
 
 #include <stdio.h>
-#include <math.h> //In order to use the M_PI count
 
 int main(){
 
-    float radius, diameter, circumference, area;
+    char character = 'c'; //single character 
+    printf("%c\n", character);
 
-    printf("Enter radius of the circle: ");
-    scanf("%f", &radius);
-
-    diameter = 2 * radius;
-    circumference = 2 * 3.14 * radius;
-    area = 3.14 * (radius * radius);
-    
-    printf("Diameter of the circle = %.2f\n ", diameter);
-    printf("The circumference of the circle = %.2f\n", circumference);
-    printf("Area of the circle = %.2f ", area);
+    char welcome_message[] = "Hello World!";  //character series (multiple characters)
+    printf("%s", welcome_message);
 
     return 0;
 }
