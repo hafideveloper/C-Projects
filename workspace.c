@@ -1,19 +1,22 @@
 
-// access to variable addresses
+// pointer concept
 
 #include <stdio.h>
 
 int main(){
 
-    char character = 'C';
-    int integer = 1;
-    float real_number = 10.4f;
-    long long large_integer = 98989898911;
+    int number = 10;
+    int * pointer;
 
-    printf("value of character variable = %c, address of character variable = %u\n", character, &character);
-    printf("value of integer variable = %c, address of integer variable = %u\n", integer, &integer);
-    printf("value of real_number variable = %c, address of real_number variable = %u\n", real_number, &real_number);
-    printf("value of large_integer variable = %c, address of large_integer variable = %u\n", large_integer, &large_integer);
+    // the pointer is assigned the address of the variable ‘number’
+    pointer = &number;
+
+    printf("address of number variable = %d\n",  &number);
+    printf("value of number variable = %d\n", number);
+
+    printf("address of pointer variable = %d\n", &pointer);
+    printf("value of pointer variable = %d\n", pointer);
+    printf("value pointed to by number variable = %d\n", *pointer); // prints the value pointed to by the ‘pointer’ pointer (i.e. the variable ‘number’), 10
 
     return 0;
 }
