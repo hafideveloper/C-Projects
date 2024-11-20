@@ -1,44 +1,21 @@
 
-//In Union all members share the same memory, so only the last assigned value is valid.
+// enumerated type
 
 #include <stdio.h>
 #include <string.h>
-union Data
+enum Levels
 {
-    int i;
-    float f;
-    char str[20];
+    LOW,
+    MEDIUM,
+    HIGH
 };
 
 int main(){
-    
-    union Data data;
 
-    data.i = 10;
-    data.f = 220.5;
-    strcpy (data.str, "C programming");
+    enum Levels RoomTemperature = LOW;
 
-    printf("Size of data : %d\n", sizeof(data));
-    printf("data.i : %d\n", data.i);
-    printf("data.f : %2f\n", data.f);
-    printf("data.str : %s\n", data.str);
-    printf("\n.....\n");
-
-    data.i = 103;
-
-    printf("Size of data : %d\n", sizeof(data));
-    printf("data.i : %d\n", data.i);
-    printf("data.f : %2f\n", data.f);
-    printf("data.str : %s\n", data.str);
-    printf("\n.....\n");
-
-    data.f = -203.45;
-
-    printf("Size of data : %d\n", sizeof(data));
-    printf("data.i : %d\n", data.i);
-    printf("data.f : %2f\n", data.f);
-    printf("data.str : %s\n", data.str);
-    printf("\n.....\n");
+    // Print the integer value of RoomTemperature (which will be 0 since LOW is the first value)
+    printf("%d", RoomTemperature);
 
     return 0;
 }
