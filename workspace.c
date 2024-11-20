@@ -1,54 +1,44 @@
-// struct
+
+//In Union all members share the same memory, so only the last assigned value is valid.
 
 #include <stdio.h>
 #include <string.h>
-
-// Define a structure for employee information
-struct EmployeeInfo
+union Data
 {
-    int Age;
-    float Salary;
-    char Name[30];
-    char Gender[8];
+    int i;
+    float f;
+    char str[20];
 };
 
 int main(){
-    // Initialize first employee data
-    struct EmployeeInfo Employee1;
-    strcpy(Employee1.Name, "Ahmet");
-    strcpy(Employee1.Gender, "Male");
-    Employee1.Age = 34;
-    Employee1.Salary = 8500;
+    
+    union Data data;
 
-    // Print first employee details
-    printf("Employee Name: %s\n", Employee1.Name);
-    printf("Employee Gender: %s\n", Employee1.Gender);
-    printf("Employee Age: %d\n", Employee1.Age);
-    printf("Employee Salary: %lf\n", Employee1.Salary);
+    data.i = 10;
+    data.f = 220.5;
+    strcpy (data.str, "C programming");
 
-    printf("\n..........\n");
+    printf("Size of data : %d\n", sizeof(data));
+    printf("data.i : %d\n", data.i);
+    printf("data.f : %2f\n", data.f);
+    printf("data.str : %s\n", data.str);
+    printf("\n.....\n");
 
-    // Initialize second employee data using direct initialization
-    struct EmployeeInfo Employee2 = {33, 8800, "Ela", "Female"};
+    data.i = 103;
 
-    // Print first employee details
-    printf("Employee Name: %s\n", Employee2.Name);
-    printf("Employee Gender: %s\n", Employee2.Gender);
-    printf("Employee Age: %d\n", Employee2.Age);
-    printf("Employee Salary: %lf\n", Employee2.Salary);
+    printf("Size of data : %d\n", sizeof(data));
+    printf("data.i : %d\n", data.i);
+    printf("data.f : %2f\n", data.f);
+    printf("data.str : %s\n", data.str);
+    printf("\n.....\n");
 
-    printf("\n..........\n");
+    data.f = -203.45;
 
-    // Copy second employee data into a new structure
-    struct EmployeeInfo Employee2Copy;
-    Employee2Copy = Employee2;
-
-    // Print copied employee details
-    printf("Employee Name: %s\n", Employee2Copy.Name);
-    printf("Employee Gender: %s\n", Employee2Copy.Gender);
-    printf("Employee Age: %d\n", Employee2Copy.Age);
-    printf("Employee Salary: %lf\n", Employee2Copy.Salary);
-
+    printf("Size of data : %d\n", sizeof(data));
+    printf("data.i : %d\n", data.i);
+    printf("data.f : %2f\n", data.f);
+    printf("data.str : %s\n", data.str);
+    printf("\n.....\n");
 
     return 0;
 }
