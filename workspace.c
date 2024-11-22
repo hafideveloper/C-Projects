@@ -1,22 +1,27 @@
 
-// pointer concept
+// boolean variables
 
 #include <stdio.h>
+#include <stdbool.h>
 
 int main(){
 
-    int number = 10;
-    int * pointer;
+    bool isUserAuthenticated = true;
+    bool hasNetworkConnection = false;
+    printf("%d\n", isUserAuthenticated ); // 1 (true)
+    printf("%d\n", hasNetworkConnection ); // 0 (false)
+    printf("\n...\n");
 
-    // the pointer is assigned the address of the variable ‘number’
-    pointer = &number;
+    printf("%d\n", 10 > 9); // 1 (true)
 
-    printf("address of number variable = %d\n",  &number);
-    printf("value of number variable = %d\n", number);
+    int x = 10;
+    int y = 9;
+    printf("%d\n", x > y); // 1 (true)
+    printf("\n...\n");
 
-    printf("address of pointer variable = %d\n", &pointer);
-    printf("value of pointer variable = %d\n", pointer);
-    printf("value pointed to by number variable = %d\n", *pointer); // prints the value pointed to by the ‘pointer’ pointer (i.e. the variable ‘number’), 10
+    printf("%d\n", 10 == 10); // 1 (true)
+    printf("%d\n", 10 == 15); // 0 (false)
+    printf("%d\n", 10 != 55); // 1 (true)
 
     return 0;
 }
