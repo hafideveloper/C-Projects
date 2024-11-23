@@ -1,27 +1,30 @@
 
-// boolean variables
+// number comparison with conditional expressions
 
 #include <stdio.h>
 #include <stdbool.h>
 
 int main(){
 
-    bool isUserAuthenticated = true;
-    bool hasNetworkConnection = false;
-    printf("%d\n", isUserAuthenticated ); // 1 (true)
-    printf("%d\n", hasNetworkConnection ); // 0 (false)
-    printf("\n...\n");
+    int number1, number2;
 
-    printf("%d\n", 10 > 9); // 1 (true)
+    printf("Please enter two number values: ");
+    scanf("%d%d", &number1, &number2);
 
-    int x = 10;
-    int y = 9;
-    printf("%d\n", x > y); // 1 (true)
-    printf("\n...\n");
+    if(number1 > number2)
+    {
+        printf("%d is greater than", number1);
+    }
 
-    printf("%d\n", 10 == 10); // 1 (true)
-    printf("%d\n", 10 == 15); // 0 (false)
-    printf("%d\n", 10 != 55); // 1 (true)
+    if(number2 > number1)
+    {
+        printf("%d is greater than", number2);
+    }
+
+    if(number1 == number2)
+    {
+        printf("Two numbers are equal");
+    }
 
     return 0;
 }
