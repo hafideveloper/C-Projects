@@ -6,28 +6,36 @@
 
 int main(){
 
-    int number;
+    int number1, number2, number3, max_number;
 
-    printf("Please enter two number values: ");
-    scanf("%d", &number);
+    printf("Please enter three numbers: ");
+    scanf("%d%d%d", &number1, &number2, &number3);
 
-    // Check if the number is positive
-    if(number > 0)
+    if(number1 > number2) // Compare first two numbers to find the larger one
     {
-        printf("The number you entered is positive");
+        if(number1 > number3) // If number1 is larger than number2, compare it with number3
+        {
+            max_number = number1; // if number1 > number2, but number1 > number3
+        }
+        else
+        {
+            max_number = number3; // if number1 > number2, but number1 is not greater than number3
+        }
     }
 
-    // Check if the number is negative
-    else if(number < 0)
-    {
-        printf("The number you entered is negative");
-    }
-    
-    // If the number is neither positive nor negative, it must be zero
     else
     {
-        printf("The number you entered is zero");
+        if(number2 > number3) // If number2 is larger than number1, compare it with number3
+        {
+            max_number = number2; // if number1 is not greater than number2, and number2 is greater than number3
+        }
+        else
+        {
+            max_number = number3; // if number1 is not greater than number2, and number2 is not greater than number3
+        }
     }
+
+    printf("The largest value among three numbers = %d", max_number); // Print the largest number
 
     return 0;
 }
