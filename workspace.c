@@ -1,29 +1,32 @@
 
-// number comparison with conditional expressions
+// determining whether a number is positive or negative using if-else
 
 #include <stdio.h>
 #include <stdbool.h>
 
 int main(){
 
-    int number1, number2;
+    int number;
 
     printf("Please enter two number values: ");
-    scanf("%d%d", &number1, &number2);
+    scanf("%d", &number);
 
-    if(number1 > number2)
+    // Check if the number is positive
+    if(number > 0)
     {
-        printf("%d is greater than", number1);
+        printf("The number you entered is positive");
     }
 
-    if(number2 > number1)
+    // Check if the number is negative
+    else if(number < 0)
     {
-        printf("%d is greater than", number2);
+        printf("The number you entered is negative");
     }
-
-    if(number1 == number2)
+    
+    // If the number is neither positive nor negative, it must be zero
+    else
     {
-        printf("Two numbers are equal");
+        printf("The number you entered is zero");
     }
 
     return 0;
