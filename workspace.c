@@ -1,31 +1,29 @@
 
-// Profit and loss calculation
+// Determining whether a given year is a leap year
 
 #include <stdio.h>
 
 int main(){
 
-    int cost, selling_price, profit_loss;
+    int year;
 
-    printf("Enter the cost: ");
-    scanf("%d", &cost);
-    printf("Enter the selling price: ");
-    scanf("%d", &selling_price);
+    printf("Enter the year value: ");
+    scanf("%d", &year);
 
-    if(selling_price > cost) 
+    /*
+    Leap year rules:
+    1. A year is a leap year if it is divisible by 4 but not divisible by 100.
+    2. Alternatively, a year is a leap year if it is divisible by 400.
+    If none of these conditions are met, the year is not a leap year.
+    */
+
+    if(((year % 4 == 0) && (year % 100 != 0)) || year % 400 == 0) 
     {
-        profit_loss = selling_price - cost; // Calculate profit
-        printf("Profit = %d", profit_loss);
+        printf("The given year is a leap year.");
     }        
-    else if (cost > selling_price)
-    {
-        profit_loss = cost - selling_price; // Calculate loss
-        printf("Loss = %d", profit_loss);
-    } 
-    // If selling price equals cost, no profit or loss
     else
     {
-        printf("Neither profit nor loss has been made.");
+        printf("The given year is not a leap year.");
     }
 
     return 0;
