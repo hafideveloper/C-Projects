@@ -1,33 +1,32 @@
 
-// Ladder-structured if-else for number comparison
+// Profit and loss calculation
 
 #include <stdio.h>
-#include <stdbool.h>
 
 int main(){
 
-    int number1, number2, number3, max_number;
+    int cost, selling_price, profit_loss;
 
-    printf("Please enter three numbers: ");
-    scanf("%d%d%d", &number1, &number2, &number3);
+    printf("Enter the cost: ");
+    scanf("%d", &cost);
+    printf("Enter the selling price: ");
+    scanf("%d", &selling_price);
 
-    if((number1 > number2) && (number1 > number3)) 
+    if(selling_price > cost) 
     {
-        //if number1 is greater than the other two
-        max_number = number1; 
+        profit_loss = selling_price - cost; // Calculate profit
+        printf("Profit = %d", profit_loss);
     }        
-    else if (number2 > number3)
+    else if (cost > selling_price)
     {
-        //if number2 is greater than the other two
-        max_number = number2; 
-    }
+        profit_loss = cost - selling_price; // Calculate loss
+        printf("Loss = %d", profit_loss);
+    } 
+    // If selling price equals cost, no profit or loss
     else
     {
-        // if number3 is greater than the other two
-        max_number = number3; 
+        printf("Neither profit nor loss has been made.");
     }
-
-    printf("The largest value among three numbers = %d", max_number); // Print the largest number
 
     return 0;
 }
