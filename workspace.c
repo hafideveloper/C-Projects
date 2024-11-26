@@ -1,5 +1,5 @@
 
-// determining whether a number is positive or negative using if-else
+// Ladder-structured if-else for number comparison
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -11,28 +11,21 @@ int main(){
     printf("Please enter three numbers: ");
     scanf("%d%d%d", &number1, &number2, &number3);
 
-    if(number1 > number2) // Compare first two numbers to find the larger one
+    if((number1 > number2) && (number1 > number3)) 
     {
-        if(number1 > number3) // If number1 is larger than number2, compare it with number3
-        {
-            max_number = number1; // if number1 > number2, but number1 > number3
-        }
-        else
-        {
-            max_number = number3; // if number1 > number2, but number1 is not greater than number3
-        }
+        //if number1 is greater than the other two
+        max_number = number1; 
+    }        
+    else if ((number2 > number1) && (number2 > number3))
+    {
+        //if number2 is greater than the other two
+        max_number = number2; 
     }
 
-    else
+    else if ((number3 > number1) && (number3 > number2))
     {
-        if(number2 > number3) // If number2 is larger than number1, compare it with number3
-        {
-            max_number = number2; // if number1 is not greater than number2, and number2 is greater than number3
-        }
-        else
-        {
-            max_number = number3; // if number1 is not greater than number2, and number2 is not greater than number3
-        }
+        // if number3 is greater than the other two
+        max_number = number3; 
     }
 
     printf("The largest value among three numbers = %d", max_number); // Print the largest number
