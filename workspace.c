@@ -16,13 +16,12 @@ int main(){
         //if number1 is greater than the other two
         max_number = number1; 
     }        
-    else if ((number2 > number1) && (number2 > number3))
+    else if (number2 > number3)
     {
         //if number2 is greater than the other two
         max_number = number2; 
     }
-
-    else if ((number3 > number1) && (number3 > number2))
+    else
     {
         // if number3 is greater than the other two
         max_number = number3; 
