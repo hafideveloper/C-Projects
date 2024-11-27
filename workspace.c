@@ -2,28 +2,43 @@
 // Determining whether a given year is a leap year
 
 #include <stdio.h>
+#include <math.h>
 
 int main(){
 
-    int year;
+    float a, b, c;
+    float root1, root2, imaginary;
+    float discriminant;
 
-    printf("Enter the year value: ");
-    scanf("%d", &year);
+    printf("Enter the coefficients a, b, and c of the quadratic equation in the form (ax^2 + bx + c): ");
+    scanf("%f%f%f", &a, &b, &c);
 
-    /*
-    Leap year rules:
-    1. A year is a leap year if it is divisible by 4 but not divisible by 100.
-    2. Alternatively, a year is a leap year if it is divisible by 400.
-    If none of these conditions are met, the year is not a leap year.
-    */
+    // Calculate the discriminant (b^2 - 4ac)
+    discriminant = (b * b) - (4 * a * c);
 
-    if(((year % 4 == 0) && (year % 100 != 0)) || year % 400 == 0) 
+    // If discriminant is positive, two distinct real roots exist
+    if(discriminant > 0) 
     {
-        printf("The given year is a leap year.");
-    }        
-    else
+        root1 = (-b + sqrt(discriminant)) / (2 * a); // Calculate first root
+        root2 = (-b - sqrt(discriminant)) / (2 * a); // Calculate second root
+
+        printf("There are two distinct and real roots: %.2f and %.2f", root1, root2);
+    }
+
+    // If discriminant is zero, two real roots are equal
+    else if (discriminant == 0)
     {
-        printf("The given year is not a leap year.");
+        root1 = root2 = -b / (2 * a); // Calculate equal real roots
+
+        printf("There are two real roots equal to each other: %.2f and %.2f", root1, root2);
+    }
+
+    // If discriminant is negative, two complex roots exist
+    else if(discriminant < 0)
+    {
+        root1 = root2 = -b / (2 * a); // Calculate real part of the complex roots
+        imaginary = sqrt(-discriminant) / (2 * a); // Calculate imaginary part of the complex roots
+        printf("There are two distinct and complex roots: %.2f + i%.2f and %.2f - i%.2f", root1, imaginary, root2, imaginary);
     }
 
     return 0;
