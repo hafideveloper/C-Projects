@@ -1,26 +1,49 @@
 
-// determine whether a given character is alphabetical or not
+// simple calculator application (switch case)
 
 #include <stdio.h>
 
 int main(){
 
-    char character;
+    char operation;
+    float number1, number2, result=0.0f;
 
-    printf("Please enter a character: ");
-    scanf("%c", &character);
+    printf("simple calculator application\n");
+    printf("-----------------------------\n");
+    printf("[number 1] [+ - * /] [number 2] enter\n");
 
-    if((character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z')) 
+    scanf("%f %c %f", &number1, &operation, &number2);
+
+    // Using switch-case to perform the selected operation
+    switch (operation)
     {
-        // If the character is within the range of 'a'-'z' or 'A'-'Z'
-        printf("You entered an alphabetical character.");
+    case '+':
+    result = number1 + number2;
+        break;
+    
+    case '-':
+    result = number1 - number2;
+        break;
+
+    case '*':
+    result = number1 * number2;
+        break;   
+
+    case '/':
+    // Prevent division by zero
+        if (number2 == 0) {
+            printf("Error: Division by zero is not allowed!\n");
+            return 1; // Exit the program with an error code
+        }
+    result = number1 / number2;
+        break; 
+    
+    default: // If an invalid operation is entered
+        printf("Invalid operation!");
+        return 1; // Exit the program with an error code
     }
 
-    else
-    {
-        // If the character does not fall within the alphabetical ranges
-        printf("You entered a non-alphabetic character.");
-    }
+    printf("%.2f %c %.2f = %.2f", number1, operation, number2, result);
 
-    return 0;
+    return 0; // Indicating successful program execution
 }
