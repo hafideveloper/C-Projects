@@ -1,49 +1,47 @@
 
-// simple calculator application (switch case)
+// Program to calculate the roots of a quadratic equation using switch-case
+// Includes handling for real and distinct roots, complex roots, and equal roots
 
 #include <stdio.h>
+#include <math.h>
 
 int main(){
 
-    char operation;
-    float number1, number2, result=0.0f;
+    float a, b, c;
+    float root1, root2, imaginary;
+    float discriminant;
 
-    printf("simple calculator application\n");
-    printf("-----------------------------\n");
-    printf("[number 1] [+ - * /] [number 2] enter\n");
+    printf("Enter the coefficients a, b, and c of the quadratic equation in the form (ax^2 + bx + c): ");
+    scanf("%f%f%f", &a, &b, &c);
 
-    scanf("%f %c %f", &number1, &operation, &number2);
+    // Calculate the discriminant to determine the nature of the roots.
+    discriminant = (b * b) - (4 * a * c);
 
-    // Using switch-case to perform the selected operation
-    switch (operation)
+    switch (discriminant > 0)
     {
-    case '+':
-    result = number1 + number2;
+    case 1: // Case when discriminant > 0: Two distinct and real roots
+        root1 = (-b + sqrt(discriminant)) / (2 * a); 
+        root2 = (-b - sqrt(discriminant)) / (2 * a);        
+        printf("There are two distinct and real roots: %.2f and %.2f", root1, root2);      
         break;
     
-    case '-':
-    result = number1 - number2;
-        break;
+    case 0: // Case when discriminant <= 0: Need further checks for exact scenario
+        switch (discriminant < 0)
+        {
+            case 1: 
+            // Case when discriminant < 0: Two complex (imaginary) roots.
+            root1 = root2 = -b / (2 * a);
+            imaginary = sqrt(-discriminant) / (2 * a);
+            printf("There are two distinct and complex roots: %.2f + i%.2f and %.2f - i%.2f", root1, imaginary, root2, imaginary);
+            break;
 
-    case '*':
-    result = number1 * number2;
-        break;   
+            case 0:
+            // Case when discriminant == 0: Two real and equal roots.
+            root1 = root2 = -b / (2 * a);
+            printf("There are two real roots equal to each other: %.2f and %.2f", root1, root2);
+            break;
 
-    case '/':
-    // Prevent division by zero
-        if (number2 == 0) {
-            printf("Error: Division by zero is not allowed!\n");
-            return 1; // Exit the program with an error code
         }
-    result = number1 / number2;
-        break; 
-    
-    default: // If an invalid operation is entered
-        printf("Invalid operation!");
-        return 1; // Exit the program with an error code
     }
-
-    printf("%.2f %c %.2f = %.2f", number1, operation, number2, result);
-
-    return 0; // Indicating successful program execution
+    return 0;
 }
