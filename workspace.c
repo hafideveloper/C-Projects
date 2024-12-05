@@ -1,26 +1,23 @@
 
-// Printing counting numbers up to a given number with a for loop
+// Calculation of the sum of all integers from 1 to a given number
 
 #include <stdio.h>
 
 int main(){
 
-    int i, n;
+    int i, n, sum = 0;
 
     printf("Enter the upper limit value: ");
     scanf("%d", &n);
 
     printf("All counting numbers from 1 to %d: \n", n);
 
-    /* Loop from 1 to the given number 'n'
-       'i' is initialized to 1, the loop continues while 'i' is less than or equal to 'n', 
-       and 'i' is incremented by 1 in each iteration
-    */
-
     for(i = 1; i<=n; i++)
     {
-        printf("%d\n", i);
+        sum += i;
     }
-    
+
+    printf("Sum of the first %d natural numbers = %d", n, sum);
+
     return 0;
 }
