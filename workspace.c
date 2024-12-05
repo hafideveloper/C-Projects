@@ -1,5 +1,5 @@
 
-// Calculating the sum of all integers in a given interval (including the limits)
+// Calculating the sum of all integers in a given interval (excluding the limits)
 
 #include <stdio.h>
 
@@ -15,14 +15,14 @@ int main(){
     printf("Enter the upper limit value: ");
     scanf("%d", &upper_limit);
 
-    // Calculate the sum of all numbers
-    for(i = lower_limit; i<=upper_limit; i++)
+    // Calculate the sum of numbers, excluding the limits
+    for(i = lower_limit + 1; i < upper_limit; i++)
     {
         sum += i;
     }
 
     // Display the result
-    printf("Sum of the natural numbers between %d and %d =  %d", lower_limit, upper_limit, sum);
+    printf("Sum of the natural numbers between %d and %d (excluding the limits) =  %d", lower_limit, upper_limit, sum);
 
     return 0;
 }
