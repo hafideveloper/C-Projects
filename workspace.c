@@ -1,23 +1,28 @@
 
-// Calculation of the sum of all integers from 1 to a given number
+// Calculating the sum of all integers in a given interval (including the limits)
 
 #include <stdio.h>
 
 int main(){
 
-    int i, n, sum = 0;
+    int i, lower_limit, upper_limit, sum = 0;
 
+    // Prompt user to enter the lower limit value
+    printf("Enter the lower limit value: ");
+    scanf("%d", &lower_limit);
+
+    // Prompt user to enter the upper limit value
     printf("Enter the upper limit value: ");
-    scanf("%d", &n);
+    scanf("%d", &upper_limit);
 
-    printf("All counting numbers from 1 to %d: \n", n);
-
-    for(i = 1; i<=n; i++)
+    // Calculate the sum of all numbers
+    for(i = lower_limit; i<=upper_limit; i++)
     {
         sum += i;
     }
 
-    printf("Sum of the first %d natural numbers = %d", n, sum);
+    // Display the result
+    printf("Sum of the natural numbers between %d and %d =  %d", lower_limit, upper_limit, sum);
 
     return 0;
 }
