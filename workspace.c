@@ -1,28 +1,27 @@
 
-// Calculating the sum of all integers in a given interval (excluding the limits)
+// Print all even numbers up to a given number (with for loop)
 
 #include <stdio.h>
 
 int main(){
 
-    int i, lower_limit, upper_limit, sum = 0;
-
-    // Prompt user to enter the lower limit value
-    printf("Enter the lower limit value: ");
-    scanf("%d", &lower_limit);
+    int i, n;
 
     // Prompt user to enter the upper limit value
     printf("Enter the upper limit value: ");
-    scanf("%d", &upper_limit);
+    scanf("%d", &n);
 
-    // Calculate the sum of numbers, excluding the limits
-    for(i = lower_limit + 1; i < upper_limit; i++)
+    printf("All even numbers from 1 to %d : \n", n);
+
+    // Check the numbers from 1 to n with a loop
+    for(i=1; i<=n; i++)
     {
-        sum += i;
+        // Check if the number is even
+        if(i%2 == 0) //If i is exactly divisible by 2, i.e. even
+        {
+            printf("%d\n", i);
+        }
     }
-
-    // Display the result
-    printf("Sum of the natural numbers between %d and %d (excluding the limits) =  %d", lower_limit, upper_limit, sum);
-
+    
     return 0;
 }
