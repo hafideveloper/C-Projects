@@ -1,27 +1,25 @@
 
-// Print all even numbers up to a given number (with for loop)
+// Finding all factors of a number
 
 #include <stdio.h>
 
 int main(){
 
-    int i, n;
+    int i, number;
 
-    // Prompt user to enter the upper limit value
-    printf("Enter the upper limit value: ");
-    scanf("%d", &n);
+    printf("Enter the number to calculate the factors: ");
+    scanf("%d", &number);
 
-    printf("All even numbers from 1 to %d : \n", n);
+    printf("All factors of the number %d: \n", number);
 
-    // Check the numbers from 1 to n with a loop
-    for(i=1; i<=n; i++)
+    for(i=1; i<=number; i++)
     {
-        // Check if the number is even
-        if(i%2 == 0) //If i is exactly divisible by 2, i.e. even
+        //check if 'i' divides 'number' without remainder
+        if(number % i == 0)
         {
-            printf("%d\n", i);
+            printf("%d, ", i);
         }
     }
-    
+       
     return 0;
 }
