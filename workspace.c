@@ -1,5 +1,5 @@
 
-// Finding all factors of a number
+// Creating the multiplication table of a given number
 
 #include <stdio.h>
 
@@ -7,18 +7,14 @@ int main(){
 
     int i, number;
 
-    printf("Enter the number to calculate the factors: ");
+    // Receiving the number from the user for which the multiplication table will be created
+    printf("Enter the number for which the multiplication table is to be created: ");
     scanf("%d", &number);
 
-    printf("All factors of the number %d: \n", number);
-
-    for(i=1; i<=number; i++)
+    //Printing the multiplication table from 1 to 10 for the given number
+    for(i=1; i<=10; i++)
     {
-        //check if 'i' divides 'number' without remainder
-        if(number % i == 0)
-        {
-            printf("%d, ", i);
-        }
+        printf("%d * %d = %d\n", number, i, (number * i));
     }
        
     return 0;
