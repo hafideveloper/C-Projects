@@ -1,16 +1,16 @@
 
-// How the break command works (in a for loop)
+// operation of the continue command
 
 #include <stdio.h>
 
 int main(){
 
-    int i = 0;
+    int i;
 
-    for(i=1; i<=10; i++)
+    for(i = 0; i < 10; i++)
     {
-        if (i == 4) {
-            break;
+        if (i == 5) {
+            continue;
         }
         printf("%d\n", i);
     }
