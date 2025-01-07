@@ -1,18 +1,33 @@
 
-// operation of the continue command
+// Print all counting numbers up to a given number (with for and while loops)
 
 #include <stdio.h>
 
 int main(){
 
-    int i;
+    int i, n;
 
-    for(i = 0; i < 10; i++)
+    printf("Enter the upper limit value: ");
+    scanf("%d", &n);
+
+    // Print all counting numbers from 1 to n (using a for loop)
+    printf("All counting numbers from 1 to %d : \n", n);
+
+    for(i = 1; i<=n; i++)
     {
-        if (i == 5) {
-            continue;
-        }
         printf("%d\n", i);
+    }
+
+    printf("...\n");
+
+    // Initialize i to 1 before starting the while loop
+    i=1;
+
+    // Print numbers using a while loop
+    while(i <= n)
+    {
+        printf("%d\n", i);
+        i++;
     }
        
     return 0;
